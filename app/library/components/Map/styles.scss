@@ -1,0 +1,15 @@
+.leaflet-container {
+  .leaflet-pane,
+  .leaflet-top,
+  .leaflet-bottom,
+  .leaflet-left,
+  .leaflet-right {
+    z-index: var(--map-zIndex);
+  }
+  .leaflet-popup {
+    .leaflet-popup-content-wrapper {
+    }
+    .leaflet-popup-content {
+    }
+  }
+}

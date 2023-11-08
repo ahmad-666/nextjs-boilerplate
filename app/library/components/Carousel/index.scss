@@ -1,0 +1,41 @@
+.swiper {
+  .swiper-pagination {
+    @apply flex flex-wrap items-center justify-center gap-2;
+    .swiper-pagination-bullet {
+      @apply m-0 rounded-circle bg-disable-main;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      @apply bg-primary-main;
+    }
+  }
+}
+.swiper.swiper-lg-pagination {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @apply h-[15px] w-[15px];
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      @apply h-[25px] w-[25px];
+    }
+  }
+}
+.swiper.swiper-md-pagination {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @apply h-[12px] w-[12px];
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      @apply h-[18px] w-[18px];
+    }
+  }
+}
+.swiper.swiper-sm-pagination {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @apply h-[10px] w-[10px];
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      @apply h-[15px] w-[15px];
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "formField": {
+    "noData": "داده ای برای نمایش وجود ندارد"
+  },
+  "fileUploader": {
+    "dragAndDrop": "میتوانید فایل را اینجا بکشید",
+    "or": "یا",
+    "upload": "آپلود فایل",
+    "acceptedFiles": "فایل های آپلود شده",
+    "rejectedFiles": "فایل های رد شده"
+  },
+  "dataTable": {
+    "loading": "در حال بارگزاری ...",
+    "noData": "داده ای برای نمایش وجود ندارد",
+    "search": "جست و جو",
+    "pageSize": "تعداد نتیجه",
+    "sortBy": "مرتب سازی بر اساس"
+  },
+  "dateTimePicker": {
+    "gregory": "میلادی",
+    "jalali": "شمسی",
+    "startTimeTitle": "زمان شروع",
+    "endTimeTitle": "زمان پایان",
+    "today": "امروز",
+    "clear": "پاک کردن",
+    "toggleCalendar": "تقویم {type}"
+  },
+  "timer": {
+    "day": "روز",
+    "hour": "ساعت",
+    "minute": "دقیقه",
+    "second": "ثانیه"
+  }
+}
