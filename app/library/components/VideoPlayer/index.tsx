@@ -158,9 +158,16 @@ const VideoPlayer = (
         }
         const percent = getVideoPositionPercent(offsetX);
         seekerContainer.current.style.setProperty("--progress", `${percent}`);
+        seekerContainer.current.style.setProperty(
+          "--preview-position",
+          `${Math.min(Math.max(7, percent), 93)}`
+        );
+        setActivePreview(
+          previews[Math.floor((percent / 100) * previews.length)]
+        );
       }
     },
-    [getVideoPositionPercent]
+    [previews, getVideoPositionPercent]
   );
   const seekerScrubEndHandler = useCallback(
     (e: MouseEvent | TouchEvent) => {
@@ -176,14 +183,16 @@ const VideoPlayer = (
           offsetX = changedTouches[0].clientX;
         }
         const percent = getVideoPositionPercent(offsetX);
-        isScrubbing.current = false;
-        setShowThumbnail(false);
         videoElm.currentTime = videoElm.duration * (percent / 100);
+        seekerContainer.current.style.setProperty("--preview-position", "0");
+        isScrubbing.current = false;
+        isScrubVideoPaused.current = false;
+        setShowThumbnail(false);
+        setActivePreview(null);
         if (type === "mouseup") {
           if (isScrubVideoPaused.current) videoElm.pause();
           else videoElm.play();
         }
-        isScrubVideoPaused.current = false;
       }
     },
     [getVideoPositionPercent]
@@ -202,19 +211,12 @@ const VideoPlayer = (
         offsetX = changedTouches[0].clientX;
       }
       const percent = getVideoPositionPercent(offsetX);
-      setActivePreview(previews[Math.floor((percent / 100) * previews.length)]);
       seekerContainer.current.style.setProperty("--position", `${percent}`);
-      seekerContainer.current.style.setProperty(
-        "--preview-position",
-        `${Math.min(Math.max(7, percent), 93)}`
-      );
     },
-    [previews, getVideoPositionPercent]
+    [getVideoPositionPercent]
   );
   const seekerOutHandler = useCallback(() => {
-    setActivePreview(null);
     seekerContainer.current.style.setProperty("--position", "0");
-    seekerContainer.current.style.setProperty("--preview-position", "0");
   }, []);
   const seekerClickHandler = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
