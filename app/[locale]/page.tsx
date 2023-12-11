@@ -1,5 +1,5 @@
 import SectionContainer from "@/app/styled-components/SectionContainer";
-import TestComp from "@/app/components/TestComp";
+import LocaleTestComp from "@/app/components/LocaleTestComp";
 import { createTranslator } from "next-intl";
 import type { Metadata } from "next";
 
@@ -24,7 +24,7 @@ export default async function Page({ params: { locale } }: PageProps) {
   return (
     <div>
       <SectionContainer>
-        <TestComp />
+        <LocaleTestComp />
       </SectionContainer>
     </div>
   );
