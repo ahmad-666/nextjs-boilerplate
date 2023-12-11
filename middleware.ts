@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import createNextIntlMiddleware from "next-intl/middleware";
 import libraryConfig from "./app/library/config";
+import type { Locale } from "@/app/library/config.types";
 
 const { defaultLocale: configDefaultLocale, locales } = libraryConfig;
 
@@ -9,7 +10,7 @@ export default async function middleware(req: NextRequest) {
     req.headers.get("x-default-locale") || configDefaultLocale;
   const handleI18nRouting = createNextIntlMiddleware({
     locales: locales.map((l) => l.value), //something like ['en','fa']
-    defaultLocale,
+    defaultLocale: defaultLocale as Locale,
     localeDetection: true, //detect user preferred locale
     localePrefix: "as-needed",
     //'as-needed'(default) --> only add locale prefix for non-default locales and default locale will not be added to url as prefix
@@ -48,7 +49,7 @@ export default async function middleware(req: NextRequest) {
   // }
   //------------------------------------------
   //------------------------------------------
-  return response;
+  //return response;
 }
 
 export const config = {

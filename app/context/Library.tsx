@@ -9,9 +9,9 @@ type LibraryProviderProps = {
 
 const LibraryProvider = ({ children }: LibraryProviderProps) => {
   return (
-    <LocaleProvider>
-      <ThemeProvider>{children}</ThemeProvider>
-    </LocaleProvider>
+    // <LocaleProvider>
+    <ThemeProvider>{children}</ThemeProvider>
+    // </LocaleProvider>
   );
 };
 export default LibraryProvider;

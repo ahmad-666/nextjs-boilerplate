@@ -1,6 +1,7 @@
 import type { Locale, LocaleDetails } from "../library/config.types";
 
 export const DEFAULT_LOCALE: Locale = "en";
+export const locales: Locale[] = ["en", "fa"];
 const localeDetails: LocaleDetails[] = [
   {
     value: "en",

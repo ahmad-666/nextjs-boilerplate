@@ -1,5 +1,5 @@
 "use client";
-import { QueryClientProvider, QueryClient } from "react-query";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 const client = new QueryClient({
   defaultOptions: {
     queries: {
@@ -9,7 +9,6 @@ const client = new QueryClient({
       refetchOnMount: true,
       refetchOnReconnect: false,
       refetchOnWindowFocus: false,
-      useErrorBoundary: false,
     },
   },
 });
